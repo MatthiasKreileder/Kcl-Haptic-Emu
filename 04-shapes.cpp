@@ -41,6 +41,19 @@
 */
 //==============================================================================
 
+//==============================================================================
+/*
+	Comment author: Matthias Kreileder
+	I used and extended this source file for the purpose of my MSc thesis
+	at the chair of telecommunications at King's College London.
+	Non of this code is my work expect where I explicitly state it above a
+	function declaration as follows:
+	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London
+	void foo(){ ... }
+*/
+//==============================================================================
+
 //------------------------------------------------------------------------------
 #include "chai3d.h"
 #include "../../../src/chai3d.h"
@@ -643,7 +656,9 @@ void updateHaptics(void)
         hapticDevice->getPosition(position);
 
 
-
+	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London
+	// ---------------------- Starts here ---------------------- //
         /*
          * READ FROM NS3
          */
@@ -698,8 +713,8 @@ void updateHaptics(void)
 
         // update position and orientation of cursor
         cursor->setLocalPos(positionFromNs3);
-        //tool->setLocalPos(positionFromNs3);
-        //tool->setV
+        // ---------------------- Ends here ---------------------- //
+        
         /////////////////////////////////////////////////////////////////////
         // HAPTIC FORCE COMPUTATION
         /////////////////////////////////////////////////////////////////////
@@ -750,7 +765,9 @@ void updateHaptics(void)
         																		deviceGlobalRot,
 																				deviceGlobalLinVel,
 																				deviceGlobalAngVel);
-
+	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London
+	// ---------------------- Starts here ---------------------- //
         /*
          * WRITE TO NS3
          */
@@ -761,7 +778,7 @@ void updateHaptics(void)
         /*
          * WRITE TO NS3
          */
-
+	// ---------------------- Ends here ---------------------- //
 
         /////////////////////////////////////////////////////////////////////
         // HAPTIC SIMULATION
