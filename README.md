@@ -25,9 +25,9 @@ Setup the Windows side
 ======================
 
 PLEASE DO THE FOLLOWING
-(1) Please follow these instructions to create a chai3d example with Visual Studio: http://www.chai3d.org/download/doc/html/chapter4-creation.html
+- Please follow these instructions to create a chai3d example with Visual Studio: http://www.chai3d.org/download/doc/html/chapter4-creation.html
 
-(2) Use the source code found in 04-UDP-Local.cpp as the source of your example. 
+- Use the source code found in 04-UDP-Local.cpp as the source of your example. 
 
 WHY DOING THIS?
 This adds the sending and receiving functionality to chai3d.
@@ -38,10 +38,10 @@ I assume you have chai3d installed in ~/Dev/chai3d.
 I assume you have put the source of this repo into ~/Dev/Kcl-Haptic-Emu
 
 PLEASE DO THE FOLLOWING
-(1) user@~/Dev/Kcl-Haptic-Emu$ cp cMyCustomDeviceHandler.h ~/Dev/chai3d/src/devices/
-(2) user@~/Dev/Kcl-Haptic-Emu$ cp cMyCustomDeviceHandler.cpp ~/Dev/chai3d/src/devices/
-(3) user@~/Dev/Kcl-Haptic-Emu$ cp 04-shapes.cpp ~/Dev/chai3d/examples/GLUT/04-shapes
-(4) Build chai3d
+- user@~/Dev/Kcl-Haptic-Emu$ cp cMyCustomDeviceHandler.h ~/Dev/chai3d/src/devices/
+- user@~/Dev/Kcl-Haptic-Emu$ cp cMyCustomDeviceHandler.cpp ~/Dev/chai3d/src/devices/
+- user@~/Dev/Kcl-Haptic-Emu$ cp 04-shapes.cpp ~/Dev/chai3d/examples/GLUT/04-shapes
+- Build chai3d
 
 WHY DOING THIS?
 Step (1) and (2) add the functionality to chai3d to talk to the ns-3 module Kcl-Haptic-Sim via a custom device implementation
@@ -50,30 +50,30 @@ You know what step (4) does!
 
 Configure both ethernet interfaces
 ==================================
-Please assign your windows ethernet by assigning it the IP: 172.16.25.126 with the Subnet mask: 255.255.0.0
-Please assign your linux eth0: IP 172.16.25.125 (same Subnet mask) and set it into promiscuous mode
+- Please assign your windows ethernet by assigning it the IP: 172.16.25.126 with the Subnet mask: 255.255.0.0
+- Please assign your linux eth0: IP 172.16.25.125 (same Subnet mask) and set it into promiscuous mode
 
 Configure the Linux ns-3
 ========================
 
 PLEASE NOTE
-Network emulations are resource hungry programs, so please make sure you do a release (optimized) build to speed things up.
+- Network emulations are resource hungry programs, so please make sure you do a release (optimized) build to speed things up.
 
 Idea and commands taken from https://www2.nsnam.org/doxygen/fd-emu-onoff_8cc_source.html
-your-ns3-root-folder-here$ sudo chown root.root build/src/fd-net-device/ns3-dev-raw-sock-creator-optimized
-your-ns3-root-folder-here$ sudo chmod 4755 build/src/fd-net-device/ns3-dev-raw-sock-creator-optimized
+- your-ns3-root-folder-here$ sudo chown root.root build/src/fd-net-device/ns3-dev-raw-sock-creator-optimized
+- your-ns3-root-folder-here$ sudo chmod 4755 build/src/fd-net-device/ns3-dev-raw-sock-creator-optimized
 
 Try it and cross your fingers while doing it
 ============================================
 
 ON THE LINUX MACHINE
-sudo ./waf --run src/Kcl/Haptic-Sim/examples/kcl-wifi-udp-example
+- sudo ./waf --run src/Kcl/Haptic-Sim/examples/kcl-wifi-udp-example
 This should start a second process which runs chai3d (a window should pop up).
 
 If you stop ns-3 please make sure that also the chai3d process (called 04-shapes) is also terminated, and yes that is not a brilliant way to start/end programs, please read the disclaimer for more info.
 
 ON THE WINDOWS MACHINE
-Start the 04-UDP-Local example
+- Start the 04-UDP-Local example
 
 WHAT YOU SHOULD SEE
 You control the virtual scence on the Linux machine
