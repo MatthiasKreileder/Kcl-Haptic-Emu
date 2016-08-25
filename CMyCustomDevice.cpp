@@ -41,6 +41,18 @@
 */
 //==============================================================================
 
+//==============================================================================
+/*
+	Comment author: Matthias Kreileder
+	I used and extended this source file for the purpose of my MSc thesis
+	at the chair of telecommunications at King's College London.
+	Non of this code is my work expect where I explicitly state it above a
+	function declaration as follows:
+	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London
+	void foo(){ ... }
+*/
+//==============================================================================
 
 //------------------------------------------------------------------------------
 #include "system/CGlobals.h"
@@ -746,6 +758,8 @@ bool cMyCustomDevice::getUserSwitches(unsigned int& a_userSwitches)
     return (C_SUCCESS);
 }
 
+// Author: Matthias Kreileder
+// Code developed as part of my MSc thesis at King's College London
 void cMyCustomDevice::openFifos(std::string fifo1, std::string fifo2){
     m_rx_pipe = ::open(fifo1.c_str(), O_RDONLY);
     if(m_rx_pipe == -1){
@@ -767,6 +781,8 @@ void cMyCustomDevice::openFifos(std::string fifo1, std::string fifo2){
     std::cout << "Opened a pipe " << fifo2 << std::endl;
 }
 
+// Author: Matthias Kreileder
+// Code developed as part of my MSc thesis at King's College London
 void cMyCustomDevice::SafeRead(std::string& s){
 
     char readBuffer[101];
@@ -792,6 +808,8 @@ void cMyCustomDevice::SafeRead(std::string& s){
 
 }
 
+// Author: Matthias Kreileder
+// Code developed as part of my MSc thesis at King's College London
 void cMyCustomDevice::SafeWrite(std::string s){
 
     size_t messageBytes = s.length();
@@ -829,6 +847,8 @@ void cMyCustomDevice::SafeWrite(std::string s){
 
 }
 
+// Author: Matthias Kreileder
+// Code developed as part of my MSc thesis at King's College London
 void
 cMyCustomDevice::KclInitSharedMem() {
     sem_t *sem = sem_open("theCrazySemaphore", 0);
@@ -863,6 +883,8 @@ cMyCustomDevice::KclInitSharedMem() {
     m_startOfSharedMemoryPage = shm;
 }
 
+// Author: Matthias Kreileder
+// Code developed as part of my MSc thesis at King's College London
 void cMyCustomDevice::KclSafeRead(std::string &msg) {
     char* s = m_startOfSharedMemoryPage;
 
@@ -886,6 +908,8 @@ void cMyCustomDevice::KclSafeRead(std::string &msg) {
 }
 
 
+// Author: Matthias Kreileder
+// Code developed as part of my MSc thesis at King's College London
 void cMyCustomDevice::KclSafeWrite(std::string msg) {
 
     size_t msg_len = msg.size();
