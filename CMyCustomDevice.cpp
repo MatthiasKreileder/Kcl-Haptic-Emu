@@ -849,6 +849,7 @@ void cMyCustomDevice::SafeWrite(std::string s){
 
 // Author: Matthias Kreileder
 // Code developed as part of my MSc thesis at King's College London
+// Code and idea based on: https://www.cs.cf.ac.uk/Dave/C/node27.html
 void
 cMyCustomDevice::KclInitSharedMem() {
     sem_t *sem = sem_open("theCrazySemaphore", 0);
@@ -885,6 +886,7 @@ cMyCustomDevice::KclInitSharedMem() {
 
 // Author: Matthias Kreileder
 // Code developed as part of my MSc thesis at King's College London
+// Code and idea based on: https://www.cs.cf.ac.uk/Dave/C/node27.html
 void cMyCustomDevice::KclSafeRead(std::string &msg) {
     char* s = m_startOfSharedMemoryPage;
 
@@ -910,6 +912,7 @@ void cMyCustomDevice::KclSafeRead(std::string &msg) {
 
 // Author: Matthias Kreileder
 // Code developed as part of my MSc thesis at King's College London
+// Code and idea based on: https://www.cs.cf.ac.uk/Dave/C/node27.html
 void cMyCustomDevice::KclSafeWrite(std::string msg) {
 
     size_t msg_len = msg.size();
