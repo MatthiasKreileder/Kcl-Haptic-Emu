@@ -40,6 +40,20 @@
     \version   3.0.0 $Rev: 1639 $
 */
 //==============================================================================
+
+//==============================================================================
+/*
+	Comment author: Matthias Kreileder
+	I used and extended this source file for the purpose of my MSc thesis
+	at the chair of telecommunications at King's College London.
+	Non of this code is my work expect where I explicitly state it above a
+	function declaration as follows:
+	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London
+	void foo(){ ... }
+*/
+//==============================================================================
+
 #include "../system/CGlobals.h"
 //------------------------------------------------------------------------------
 #ifndef CMyCustomDeviceH
@@ -201,9 +215,12 @@ public:
     //! This method returns the number of devices available from this class of device.
     static unsigned int getNumDevices();
 
-
+	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London
     void openFifos(std::string fifo1, std::string fifo2);
-
+	
+	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London
     /*
      * \brief Will read a message of up to 100 bytes from the pipe
      *
@@ -213,6 +230,8 @@ public:
      */
     void SafeRead(std::string& s);
 
+	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London
     /*
      * \brief write a string of up to 100 bytes to the named pipe
      *
@@ -222,8 +241,12 @@ public:
      */
     void SafeWrite(std::string s);
 
+	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London
     void KclSafeRead(std::string& msg);
-    void KclSafeWrite(std::string msg);
+ 
+ 	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London   void KclSafeWrite(std::string msg);
     void KclInitSharedMem();
 
     //--------------------------------------------------------------------------
@@ -249,10 +272,14 @@ protected:
     //! Device ID number among the Phantom devices connected to the computer.
     int m_deviceID;
 
+	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London
     double m_x_pos;
     int m_rx_pipe;  // Pipe to receive from peer
     int m_tx_pipe;  // Pipe to send to peer
 
+	// Author: Matthias Kreileder
+	// Code developed as part of my MSc thesis at King's College London
 private:
     char* m_startOfSharedMemoryPage;
     sem_t* m_semaphore;
